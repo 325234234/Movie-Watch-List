@@ -1,0 +1,265 @@
+/* General setup */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Typology */
+
+body ,
+#searchbar > input,
+#searchbar > button,
+.movieTitle,
+.movieRating {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Layout */
+
+body {
+    background: #2E2E2F;
+    min-height: 100vh;
+    height: fit-content;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    height: fit-content;
+    width: clamp(550px, 70%, 650px);
+
+    padding: 0.5em;
+    margin: 0 auto;
+}
+
+/* Header */
+
+header {
+    background: url("/Images/eternal_cropped.jpg") no-repeat center;
+    background-size: cover;
+    filter: saturate(25%);
+
+    border-top-right-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 200px;
+    width: 100%;
+
+    color: white;
+}
+
+#heading,
+#searchbar,
+#movie {
+    width: 90%;
+}
+
+#heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#heading > h1 {
+    font-weight: 800;
+    font-size: 3rem;
+}
+
+#heading > a {    
+    font-weight: 700;
+}
+
+a {    
+    text-decoration: none;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active  {
+    text-decoration: none;
+    color: white;
+}
+
+#searchbar {
+    position: absolute;
+    bottom: -1.5em;
+
+    display: flex;
+
+    height: 3em;
+    width: 90%;
+}
+
+#searchbar > input {
+    height: 100%;
+    width: 80%;
+
+    border: none;
+    border-bottom-left-radius: 10px;
+
+    background-color: #2E2E2F;
+    color: #A5A5A5;
+
+    padding-left: 3em;
+    z-index: 2;
+}
+
+#searchbar > i {
+    position: absolute;
+    left: 1em;
+    top: 1em;
+    z-index:3;
+
+    color: #A5A5A5;
+}
+
+#searchbar > input,
+#searchbar > button {
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+#searchbar > button {
+    height: 100%;
+    width: 20%;
+
+    border: none;
+    border-top-right-radius: 10px;
+
+    background-color: #4B4B4B;
+    color: white;
+
+    z-index: 1;
+    
+    cursor: pointer;
+}
+
+#searchbar > button:hover {
+    filter:brightness(90%);
+}
+
+#searchbar > button:active {
+    transform:scale(0.95);
+}
+
+/* Main */
+
+main {
+    flex: 1 1 auto;
+
+    width: 100%;
+    min-height: 400px;
+    padding: 2em 4em;
+
+    background-color: #121212;
+    color:#2E2E2F;
+
+    border-bottom-left-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#reelIcon,
+#errorIcon {
+    font-size: 6rem;
+}
+
+#defaultText {
+    font-size: 2rem;
+}
+
+.movie {
+    color: white;
+
+    width: 500px;
+    height: 300px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+}
+
+.movie:not(:last-of-type) {
+    border-bottom: 1.5px solid #4B4B4B;
+}
+
+.movieImage {
+    height: 200px;
+    width: 145px;
+}
+
+.movieInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8em;
+}
+
+.movieHeading {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.5em;
+}
+
+.movieTitle {
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+.movieRating {
+    font-weight: 400;
+    font-size: 0.9rem;
+}
+
+.metaInfo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    flex-wrap: wrap;
+
+    font-size: 0.9rem;
+}
+
+.movieLength {
+    color: teal;
+
+    margin-right: 1em;
+}
+
+.movieGenre {
+    color: orange;
+
+    margin-right: 1em;
+}
+
+.addToList {
+    display: flex;
+    align-items: baseline;
+
+    margin-top: 0.2em;
+
+    cursor: pointer;
+}
+
+.watchlist {
+    margin-left: 0.3em;
+}
+
+.summary {
+    color: #A5A5A5;
+    font-size: 0.9rem;
+
+    width: 90%;
+}
