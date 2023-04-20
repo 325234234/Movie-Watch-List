@@ -27,7 +27,7 @@ function addToWatchList(title) {
 }
 
 function fetchMovies() {
-    fetch(`http://www.omdbapi.com/?apikey=e1f6fd51&s=${inputField.value.trim().replaceAll(" ", "+")}&type=movie`)
+    fetch(`https://www.omdbapi.com/?apikey=e1f6fd51&s=${inputField.value.trim().replaceAll(" ", "+")}&type=movie`)
         .then(response => response.json())
         .then(data => {
             if(data.Response === "False") {
@@ -59,7 +59,7 @@ function showDefaultMoviesList() {
 function fetchDetailedMovieData(data) {
     const length = data.Search.length < 10 ? data.Search.length : 10
     for(let i=0; i<length; i++) {
-        fetch(`http://www.omdbapi.com/?apikey=e1f6fd51&t=${data.Search[i].Title.trim().replaceAll(" ", "+")}&plot=short`)
+        fetch(`https://www.omdbapi.com/?apikey=e1f6fd51&t=${data.Search[i].Title.trim().replaceAll(" ", "+")}&plot=short`)
             .then(response => response.json())
             .then(data => renderMovie(data))        
     }       
